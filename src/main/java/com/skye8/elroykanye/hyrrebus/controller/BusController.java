@@ -24,8 +24,13 @@ public class BusController {
     }
 
     @GetMapping(value = "/{agencyName}")
-    public ResponseEntity<List<Bus>> getAllByAgencyName(@PathVariable(value = "agencyName") String agencyName) {
+    public List<Bus> getAllByAgencyName(@PathVariable(value = "agencyName") String agencyName) {
         return busService.getAllBusesByAgencyName(agencyName);
+    }
+
+    @GetMapping(value = "")
+    public List<Bus> getAll() {
+        return busService.getAllBuses();
     }
 
 }

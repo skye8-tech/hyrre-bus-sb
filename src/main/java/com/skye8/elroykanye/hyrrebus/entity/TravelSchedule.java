@@ -33,8 +33,6 @@ public class TravelSchedule implements Serializable {
     @Column(name = "total_fare", nullable = false)
     private Long totalFare;
 
-    @OneToMany(mappedBy = "travelSchedule", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BusSeat> busSeats;
 
     @OneToOne(optional = false, orphanRemoval = true)
     @JoinColumn(name = "travel_route_route_id", nullable = false)
@@ -46,5 +44,8 @@ public class TravelSchedule implements Serializable {
 
     @OneToOne(mappedBy = "travelSchedule", optional = false, orphanRemoval = true)
     private TravelTicket travelTicket;
+
+    @OneToMany(mappedBy = "travelSchedule", orphanRemoval = true)
+    private List<BusSeat> busSeats;
 
 }

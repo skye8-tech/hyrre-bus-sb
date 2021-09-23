@@ -9,5 +9,7 @@ import java.util.List;
 public interface BusService {
     boolean addBus(BusRequest newBus, String agencyName);
 
-    ResponseEntity<List<Bus>> getAllBusesByAgencyName(String agencyName);
+    List<Bus> getAllBusesByAgencyName(String agencyName);
+
+    List<Bus> getAllBuses();
 }

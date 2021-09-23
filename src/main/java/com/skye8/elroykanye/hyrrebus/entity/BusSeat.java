@@ -34,8 +34,8 @@ public class BusSeat implements Serializable {
     @JoinColumn(name = "bus_bus_id", nullable = false)
     private Bus bus;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "travel_schedule_schedule_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "travel_schedule_schedule_id")
     private TravelSchedule travelSchedule;
 
 }

@@ -10,10 +10,9 @@ import com.skye8.elroykanye.hyrrebus.repository.BusRepository;
 import com.skye8.elroykanye.hyrrebus.repository.BusSeatRepository;
 import com.skye8.elroykanye.hyrrebus.service.BusService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -35,6 +34,7 @@ public class BusServiceImpl implements BusService {
                 agency -> {
                     Bus newBus = Bus.builder()
                             .busName(busRequest.getBusName())
+                            .busNumber(busRequest.getBusNumber())
                             .plateNumber(busRequest.getPlateNumber())
                             .busCapacity(calculateBusCapacity(busRequest.getColumnNumber(), busRequest.getRowNumber()))
                             .numberOfColumns(busRequest.getColumnNumber())
@@ -49,18 +49,23 @@ public class BusServiceImpl implements BusService {
 
                     flag.set(true);
                 },
-                () -> {
-                    flag.set(false);
-                }
+                () -> flag.set(false)
         ); return flag.get();
     }
 
     @Override
-    public ResponseEntity<List<Bus>> getAllBusesByAgencyName(String agencyName) {
+    public List<Bus> getAllBusesByAgencyName(String agencyName) {
         Optional<Agency> agencyOptional = agencyRepository.findByAgencyName(agencyName);
-        return agencyOptional.map(agency ->
-                new ResponseEntity<>(agency.getBuses(), HttpStatus.FOUND)).
-                orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        if(agencyOptional.isPresent()) {
+            return agencyOptional.get().getBuses();
+        } else {
+            return new ArrayList<>();
+        }
+    }
+
+    @Override
+    public List<Bus> getAllBuses() {
+        return busRepository.findAll();
     }
 
     private void createBusSeats(Bus newBus) {
@@ -82,7 +87,7 @@ public class BusServiceImpl implements BusService {
 
 
     private BusType getBusType(String busType) {
-        return BusType.valueOf(busType.toLowerCase(Locale.ROOT));
+        return BusType.valueOf(busType.toUpperCase(Locale.ROOT));
     }
 
     private Integer calculateBusCapacity(Integer columnNumber, Integer rowNumber) {
