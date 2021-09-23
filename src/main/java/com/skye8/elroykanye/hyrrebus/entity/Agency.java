@@ -11,7 +11,8 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class Agency implements Serializable {
     private static final long serialVersionUID = -6877042702045500293L;

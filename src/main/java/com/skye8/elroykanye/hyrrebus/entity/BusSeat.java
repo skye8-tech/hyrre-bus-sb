@@ -10,7 +10,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class BusSeat implements Serializable {
     private static final long serialVersionUID = 1294672048274166752L;

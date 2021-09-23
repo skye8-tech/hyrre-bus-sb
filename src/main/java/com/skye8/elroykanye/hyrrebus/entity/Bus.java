@@ -12,7 +12,8 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class Bus implements Serializable {
     private static final long serialVersionUID = -5261768416149458783L;

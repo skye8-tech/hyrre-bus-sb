@@ -10,7 +10,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class AgencyAddress implements Serializable {
     private static final long serialVersionUID = -5081791633558094190L;
