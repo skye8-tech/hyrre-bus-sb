@@ -1,9 +1,6 @@
 package com.skye8.elroykanye.hyrrebus.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +9,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
+@Builder
 @RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class AgencyAddress implements Serializable {

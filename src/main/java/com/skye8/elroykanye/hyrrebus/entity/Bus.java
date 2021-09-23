@@ -1,10 +1,7 @@
 package com.skye8.elroykanye.hyrrebus.entity;
 
 import com.skye8.elroykanye.hyrrebus.entity.enums.BusType;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Builder
 @RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class Bus implements Serializable {
@@ -24,7 +22,7 @@ public class Bus implements Serializable {
     @Column(name = "bus_id", nullable = false)
     private Long busId;
 
-    @Column(name = "bus_name", length = 32)
+    @Column(name = "bus_name", unique = true, length = 32)
     private String busName;
 
     @Column(name = "plate_number", length = 32)
@@ -52,12 +50,10 @@ public class Bus implements Serializable {
     @JoinColumn(name = "agency_agency_id", nullable = false)
     private Agency agency;
 
-    // bus seats mapping
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "bus_bus_id")
-    private List<BusSeat> busSeats;
-
     @OneToMany(mappedBy = "bus", orphanRemoval = true)
     private List<TravelRoute> travelRoutes;
+
+    @OneToMany(mappedBy = "bus", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BusSeat> busSeats;
 
 }

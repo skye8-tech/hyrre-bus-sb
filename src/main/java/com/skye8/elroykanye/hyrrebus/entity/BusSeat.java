@@ -1,9 +1,6 @@
 package com.skye8.elroykanye.hyrrebus.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,6 +9,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
+@Builder
 @RequiredArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class BusSeat implements Serializable {
@@ -19,26 +17,23 @@ public class BusSeat implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "customer_id", nullable = false)
-    private Long customerId;
+    @Column(name = "seat_id", nullable = false)
+    private Long seatId;
 
-    @Column(name = "customer_name", nullable = false, length = 64)
-    private String customerName;
+    @Column(name = "seat_label", length = 16)
+    private String seatLabel;
 
-    @Column(name = "customer_mobile", nullable = false, length = 32)
-    private String customerMobile;
+    @Column(name = "row_number")
+    private Integer rowNumber;
 
-    @Column(name = "customer_email", nullable = false, length = 64)
-    private String customerEmail;
-
-    @Column(name = "seat_price", nullable = false)
-    private Long seatPrice;
+    @Column(name = "column_number")
+    private Integer columnNumber;
 
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "bus_bus_id", nullable = false)
     private Bus bus;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "travel_schedule_schedule_id", nullable = false)
     private TravelSchedule travelSchedule;
 
