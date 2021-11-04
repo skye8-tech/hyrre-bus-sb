@@ -31,6 +31,8 @@ public class TravelTicket implements Serializable {
     @Column(name = "bus_number", nullable = false)
     private Long busNumber;
 
+    // TODO add support for seat list
+
     @OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
     @JoinColumn(name = "travel_schedule_schedule_id", nullable = false)
     private TravelSchedule travelSchedule;

@@ -37,4 +37,8 @@ public class BusStopPoint implements Serializable {
     @OneToOne(mappedBy = "busDropPoint", orphanRemoval = true)
     private TravelRoute travelRouteDrop;
 
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "agency_agency_id", nullable = false, unique = true)
+    private Agency agency;
+
 }
