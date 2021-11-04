@@ -32,4 +32,10 @@ public class Agency implements Serializable {
     @OneToMany(mappedBy = "agency", orphanRemoval = true)
     private List<Bus> buses;
 
+    @OneToMany(mappedBy = "agency", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BusStopPoint> busStopPoints;
+
+    @OneToOne(mappedBy = "agency", cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
+    private AgencyUser agencyUser;
+
 }
