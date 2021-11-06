@@ -9,6 +9,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
 
+/**
+ * @author Tanju Brunostar
+ * created on 06/11/21
+ */
 @Table(name = "travel_route")
 @Entity
 @Getter

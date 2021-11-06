@@ -8,6 +8,10 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * @author Tanju Brunostar
+ * created on 06/11/21
+ */
 @Table(name = "bus_stop_point")
 @Entity
 @Getter
