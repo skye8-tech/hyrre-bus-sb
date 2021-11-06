@@ -10,11 +10,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.List;
 
-/**
- * @author Nfon Andrew
- * created on 06-11-21
- */
-
 @Table(name = "travel_schedule")
 @Entity
 @Getter
