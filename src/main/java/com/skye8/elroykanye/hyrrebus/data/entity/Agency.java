@@ -6,6 +6,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * @author Elroy Kanye
+ * created on: 06-11-21
+ */
+
 @Table(name = "agency")
 @Entity
 @Getter

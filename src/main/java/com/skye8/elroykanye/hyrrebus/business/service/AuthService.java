@@ -1,0 +1,8 @@
+package com.skye8.elroykanye.hyrrebus.business.service;
+
+/**
+ * @author Elroy Kanye
+ * created on: 06-11-21
+ */
+public interface AuthService {
+}

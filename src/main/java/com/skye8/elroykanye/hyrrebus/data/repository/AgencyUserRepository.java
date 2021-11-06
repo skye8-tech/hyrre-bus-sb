@@ -1,9 +1,10 @@
 package com.skye8.elroykanye.hyrrebus.data.repository;
 
-import com.skye8.elroykanye.hyrrebus.data.entity.Agency;
+import com.skye8.elroykanye.hyrrebus.data.entity.AgencyUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -11,9 +12,6 @@ import java.util.Optional;
  * created on: 06-11-21
  */
 @Repository
-public interface AgencyRepository extends JpaRepository<Agency, Long> {
-
-    Optional<Agency> findByAgencyName(String agencyName);
-
-    void deleteByAgencyName(String agencyName);
+public interface AgencyUserRepository extends JpaRepository<AgencyUser, Long> {
+    Optional<AgencyUser> findByUsername(String username);
 }
