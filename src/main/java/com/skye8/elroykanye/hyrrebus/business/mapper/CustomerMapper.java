@@ -1,5 +1,6 @@
 package com.skye8.elroykanye.hyrrebus.business.mapper;
 
+import com.skye8.elroykanye.hyrrebus.api.dto.CustomerDto;
 import org.mapstruct.Mapper;
 
 /**
@@ -9,4 +10,5 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", implementationPackage = "<PACKAGE_NAME>.impl")
 public interface CustomerMapper {
+
 }
