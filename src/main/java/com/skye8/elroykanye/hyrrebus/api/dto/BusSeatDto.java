@@ -18,7 +18,5 @@ public class BusSeatDto {
     private String seatLabel;
     private Integer rowNumber;
     private Integer columnNumber;
-    private Bus bus;
-    private TravelSchedule travelSchedule;
 }
 
