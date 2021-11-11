@@ -1,6 +1,10 @@
 package com.skye8.elroykanye.hyrrebus.business.mapper;
 
+import com.skye8.elroykanye.hyrrebus.api.dto.BusSeatDto;
+import com.skye8.elroykanye.hyrrebus.data.entity.BusSeat;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 /**
  * @author Nfon Andrew
@@ -9,4 +13,10 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", implementationPackage = "<PACKAGE_NAME>.impl")
 public interface BusSeatMapper {
+    BusSeatDto mapBusSeatToDto( BusSeat busSeat);
+
+    @InheritInverseConfiguration
+    @Mapping(target = "bus", ignore = true)
+    @Mapping(target = "travelSchedule", ignore = true)
+    BusSeat mapDtoToBusSeat(BusSeatDto busSeatDto);
 }

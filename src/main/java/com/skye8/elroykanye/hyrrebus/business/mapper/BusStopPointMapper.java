@@ -13,5 +13,11 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", implementationPackage = "<PACKAGE_NAME>.impl")
 
 public interface BusStopPointMapper {
+    BusStopPointDto mapBusStopPointToDto(BusStopPoint busStopPoint);
 
+    @InheritInverseConfiguration
+    @Mapping(target = "travelRouteBoard", ignore = true)
+    @Mapping(target = "travelRouteDrop", ignore = true)
+    @Mapping(target = "agency", ignore = true)
+    BusStopPoint mapDtoToBusStopPoint(BusStopPointDto busStopPointDto);
 }

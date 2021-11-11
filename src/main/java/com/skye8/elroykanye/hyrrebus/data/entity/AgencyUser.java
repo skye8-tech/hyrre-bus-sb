@@ -8,6 +8,9 @@ import java.io.Serializable;
 /**
  * @author Elroy Kanye
  * created on: 06-11-21
+ *
+ * modified by Tanju Brunostar
+ * modified on: 11-11-21
  */
 @Table(name = "agency_user")
 @Entity
