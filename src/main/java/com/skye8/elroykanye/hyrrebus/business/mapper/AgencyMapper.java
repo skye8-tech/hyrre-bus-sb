@@ -9,4 +9,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring", implementationPackage = "<PACKAGE_NAME>.impl")
 
 public interface AgencyMapper {
+
 }
