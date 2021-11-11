@@ -15,6 +15,7 @@ import org.mapstruct.Mapping;
  */
 @Mapper(componentModel = "spring", implementationPackage = "<PACKAGE_NAME>.impl")
 public interface AgencyMapper {
+
     AgencyDto mapAgencyToDto(Agency agency);
 
     @InheritInverseConfiguration
@@ -23,4 +24,5 @@ public interface AgencyMapper {
     @Mapping(target = "busStopPoints", ignore = true)
     @Mapping(target = "agencyUser", ignore = true)
     Agency mapDtoToAgency(AgencyDto agencyDto);
+
 }
