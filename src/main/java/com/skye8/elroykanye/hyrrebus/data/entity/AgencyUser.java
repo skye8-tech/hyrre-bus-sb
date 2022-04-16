@@ -1,9 +1,6 @@
 package com.skye8.elroykanye.hyrrebus.data.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +16,9 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class AgencyUser implements Serializable {
     private static final long serialVersionUID = -7754381310696267899L;

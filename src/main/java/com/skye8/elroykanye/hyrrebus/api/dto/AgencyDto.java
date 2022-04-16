@@ -1,6 +1,5 @@
 package com.skye8.elroykanye.hyrrebus.api.dto;
 
-import com.skye8.elroykanye.hyrrebus.data.entity.AgencyAddress;
 import lombok.*;
 
 /**
