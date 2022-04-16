@@ -38,6 +38,7 @@ class AgencyUserMapperTest {
         assertEquals(agencyUser.getFirstName(), agencyUserDto.getFirstName());
         assertEquals(agencyUser.getLastName(), agencyUserDto.getLastName());
         assertEquals(agencyUser.getPhoneNumber(), agencyUserDto.getPhoneNumber());
+        assertEquals(agencyUser.getAgency().getAgencyId(), agencyUserDto.getAgencyId());
     }
 
     @Test
