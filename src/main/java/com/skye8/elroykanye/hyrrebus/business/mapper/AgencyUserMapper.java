@@ -21,7 +21,6 @@ public interface AgencyUserMapper {
 
     @InheritInverseConfiguration
     @Mapping(target = "password", ignore = true)
-    @Mapping(target = "lastName", ignore = true)
     @Mapping(target = "agency", ignore = true)
     AgencyUser mapDtoToAgencyUser(AgencyUserDto agencyUserDto);
 }
