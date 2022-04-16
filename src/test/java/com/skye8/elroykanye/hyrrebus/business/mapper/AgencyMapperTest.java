@@ -1,5 +1,6 @@
 package com.skye8.elroykanye.hyrrebus.business.mapper;
 
+import com.skye8.elroykanye.hyrrebus.GlobalTestsDefaults;
 import com.skye8.elroykanye.hyrrebus.api.dto.AgencyAddressDto;
 import com.skye8.elroykanye.hyrrebus.api.dto.AgencyDto;
 import com.skye8.elroykanye.hyrrebus.data.entity.Agency;
@@ -28,22 +29,12 @@ class AgencyMapperTest {
 
     @BeforeEach
     public void setUp() {
-        agencyAddress = AgencyAddress.builder()
-                .street("Mile 25").town("Bamenda").region("NW").build();
-        agency = Agency.builder()
-                .agencyId(1L)
-                .agencyName("My Agency")
-                .agencyAddress(agencyAddress)
-                .build();
+        agencyAddress = GlobalTestsDefaults.DEFAULT_AGENCY_ADDRESS;
+        agency = GlobalTestsDefaults.DEFAULT_AGENCY;
+        agency.setAgencyAddress(agencyAddress);
         agencyAddress.setAgency(agency);
 
-        agencyDto = AgencyDto.builder()
-                .agencyId(1L)
-                .agencyName("Some Agency")
-                .agencyAddressDto(AgencyAddressDto.builder()
-                        .street("Some Street").town("Some Town").region("Some Region")
-                        .build())
-                .build();
+        agencyDto = GlobalTestsDefaults.DEFAULT_AGENCY_DTO;
 
     }
 
