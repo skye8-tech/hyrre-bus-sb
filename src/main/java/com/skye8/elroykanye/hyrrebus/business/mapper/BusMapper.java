@@ -19,6 +19,6 @@ public interface BusMapper {
     BusDto mapBusToDto(Bus bus);
 
     @InheritInverseConfiguration
-    @Mapping(target = "BusType", ignore = true)
+    @Mapping(target = "busType", ignore = true)
     Bus mapDtoToBus(BusDto busDto);
 }
