@@ -26,4 +26,6 @@ public class AgencyUserDto {
     private String lastName;
 
     private String phoneNumber;
+
+    private Long agencyId;
 }
