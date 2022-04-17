@@ -22,7 +22,9 @@ public class BusDto {
     private Integer busCapacity;
     private Integer numberOfRows;
     private Integer numberOfColumns;
-    private BusType busType;
+    private String busType;
 
+    // from relationships
+    private Long agencyId;
 
 }
