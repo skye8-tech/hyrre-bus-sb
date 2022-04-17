@@ -1,12 +1,10 @@
 package com.skye8.elroykanye.hyrrebus.data.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.Instant;
 import java.util.List;
 
@@ -19,7 +17,9 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString(onlyExplicitlyIncluded = true)
 public class TravelSchedule implements Serializable {
     private static final long serialVersionUID = 5439613684461611827L;
@@ -31,9 +31,6 @@ public class TravelSchedule implements Serializable {
 
     @Column(name = "departure_date", nullable = false)
     private Instant departureDate;
-
-    @Column(name = "departure_time", nullable = false)
-    private Instant departureTime;
 
     @Column(name = "total_fare", nullable = false)
     private Long totalFare;

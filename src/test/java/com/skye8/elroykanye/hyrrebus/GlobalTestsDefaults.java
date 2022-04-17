@@ -1,14 +1,11 @@
 package com.skye8.elroykanye.hyrrebus;
 
-import com.skye8.elroykanye.hyrrebus.api.dto.AgencyAddressDto;
-import com.skye8.elroykanye.hyrrebus.api.dto.AgencyDto;
-import com.skye8.elroykanye.hyrrebus.api.dto.AgencyUserDto;
-import com.skye8.elroykanye.hyrrebus.api.dto.BusDto;
-import com.skye8.elroykanye.hyrrebus.data.entity.Agency;
-import com.skye8.elroykanye.hyrrebus.data.entity.AgencyAddress;
-import com.skye8.elroykanye.hyrrebus.data.entity.AgencyUser;
-import com.skye8.elroykanye.hyrrebus.data.entity.Bus;
+import com.skye8.elroykanye.hyrrebus.api.dto.*;
+import com.skye8.elroykanye.hyrrebus.data.entity.*;
 import com.skye8.elroykanye.hyrrebus.data.entity.enums.BusType;
+
+import java.sql.Date;
+import java.time.Instant;
 
 public class GlobalTestsDefaults {
     public static final Agency DEFAULT_AGENCY = Agency.builder()
@@ -41,5 +38,17 @@ public class GlobalTestsDefaults {
     public static final BusDto DEFAULT_BUS_DTO = BusDto.builder()
             .busId(1L).busCapacity(70).numberOfRows(14).numberOfColumns(5).busType("standard")
             .plateNumber("ABC123DTO").busName("My BusDto").busNumber(123L)
+            .build();
+
+    public static final BusSeat DEFAULT_BUS_SEAT = BusSeat.builder()
+            .seatId(1L).seatLabel("A1").rowNumber(1).columnNumber(1).build();
+
+    public static final BusSeatDto DEFAULT_BUS_SEAT_DTO = BusSeatDto.builder()
+            .seatId(1L).seatLabel("B1").rowNumber(2).columnNumber(1).build();
+
+    public static final TravelSchedule DEFAULT_TRAVEL_SCHEDULE = TravelSchedule.builder()
+            .scheduleId(1L)
+            .departureDate(Instant.parse("2022-01-03T12:00:00Z"))
+            .totalFare(1000L)
             .build();
 }
