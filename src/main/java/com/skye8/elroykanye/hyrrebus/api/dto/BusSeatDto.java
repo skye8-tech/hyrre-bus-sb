@@ -30,5 +30,8 @@ public class BusSeatDto {
     // from relationships
     @JsonProperty("bus_id")
     private Long busId;
+
+    @JsonProperty("travel_schedule_id")
+    private Long travelScheduleId;
 }
 
